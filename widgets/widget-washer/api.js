@@ -2,28 +2,40 @@
 
 module.exports = {
   async getWasherState({ homey, query }) {
-
     const selectedDeviceId = query.deviceId;
 
     const driver = await homey.drivers.getDriver('washer');
     const devices = driver.getDevices();
+    const device = devices.find(d => d.getId() === selectedDeviceId);
 
-    const selectedDevice = devices.find(device => device.getId() === selectedDeviceId);
+    if (!device) throw new Error('Device not found');
 
-    const name = await selectedDevice.getName();
-    let state = await selectedDevice.getCapabilityValue('samsung_washer_current_job_state');
-    let progress = await selectedDevice.getCapabilityValue('samsung_washer_progress_percentage');
-    let remainingTime = await selectedDevice.getCapabilityValue('samsung_washer_progress_remaining_time');
+    const name = await device.getName();
+    let state = device.getCapabilityValue('samsung_washer_current_job_state');
+    let progress = device.getCapabilityValue('samsung_washer_progress_percentage');
+    let remainingTime = device.getCapabilityValue('samsung_washer_progress_remaining_time');
+    const power = device.getCapabilityValue('measure_power');
+    const energy = device.getCapabilityValue('meter_power');
+    const water = device.getCapabilityValue('meter_water');
+    const remoteEnabled = device.getCapabilityValue('samsung_washer_remote_control_enabled');
+    const detergent = device.getCapabilityValue('samsung_washer_auto_detergent_status');
+    const softener = device.getCapabilityValue('samsung_washer_auto_softener_status');
 
-    if (state == 'none') state = 'off';
-    if (state == 'off') remainingTime = '-';
-    if (progress == 1) progress = 0;
+    if (state === 'none') state = 'off';
+    if (state === 'off') remainingTime = '-';
+    if (progress === 1) progress = 0;
 
     return {
       name,
       state,
-      progress,
+      progress: state === 'off' ? 0 : (progress || 0),
       remainingTime,
+      power: typeof power === 'number' ? power : null,
+      energy: typeof energy === 'number' ? energy : null,
+      water: typeof water === 'number' ? (water * 1000) : null,
+      remoteEnabled: remoteEnabled === true,
+      detergent: detergent || null,
+      softener: softener || null,
     };
   },
 };

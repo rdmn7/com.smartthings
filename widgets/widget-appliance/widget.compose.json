@@ -1,0 +1,31 @@
+{
+  "name": {
+    "en": "Washer & Dryer",
+    "nl": "Wasmachine & Droger",
+    "de": "Waschmaschine & Trockner",
+    "fr": "Lave-linge & Sèche-linge",
+    "es": "Lavadora & Secadora",
+    "it": "Lavatrice & Asciugatrice",
+    "no": "Vaskemaskin & Tørketrommel",
+    "sv": "Tvättmaskin & Torktumlare",
+    "da": "Vaskemaskine & Tørretumbler",
+    "pl": "Pralka & Suszarka",
+    "ru": "Стиральная & Сушильная машина",
+    "ko": "세탁기 & 건조기"
+  },
+  "height": 240,
+  "settings": [],
+  "devices": {
+    "type": "app",
+    "singular": false,
+    "filter": {
+      "capabilities": "samsung_washer_current_job_state|samsung_dryer_current_job_state"
+    }
+  },
+  "api": {
+    "getDeviceState": {
+      "method": "GET",
+      "path": "/"
+    }
+  }
+}

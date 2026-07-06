@@ -21,5 +21,19 @@
     "spin": "Centrifugado",
     "idle": "Inactivo",
     "off": "Apagado"
+  },
+  "samsung_dryer_current_job_state": {
+    "cooling": "Enfriamiento",
+    "drying": "Secado",
+    "finished": "Finalizado",
+    "none": "Ninguno",
+    "wrinklePrevent": "Antiarrugas",
+    "delayWash": "Lavado retardado",
+    "weightSensing": "Detección de peso",
+    "freezeProtection": "Protección anticongelante",
+    "rinse": "Enjuague",
+    "spin": "Centrifugado",
+    "idle": "Inactivo",
+    "off": "Apagado"
   }
 }

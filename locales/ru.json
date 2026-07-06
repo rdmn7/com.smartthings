@@ -21,5 +21,19 @@
     "spin": "Отжим",
     "idle": "Ожидание",
     "off": "Выключено"
+  },
+  "samsung_dryer_current_job_state": {
+    "cooling": "Охлаждение",
+    "drying": "Сушка",
+    "finished": "Завершено",
+    "none": "Нет",
+    "wrinklePrevent": "Защита от складок",
+    "delayWash": "Отложенная стирка",
+    "weightSensing": "Определение веса",
+    "freezeProtection": "Защита от замерзания",
+    "rinse": "Полоскание",
+    "spin": "Отжим",
+    "idle": "Ожидание",
+    "off": "Выключено"
   }
 }

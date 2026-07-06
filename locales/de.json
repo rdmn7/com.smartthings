@@ -21,5 +21,19 @@
     "spin": "Schleudern",
     "idle": "Leerlauf",
     "off": "Aus"
+  },
+  "samsung_dryer_current_job_state": {
+    "cooling": "Abkühlen",
+    "drying": "Trocknen",
+    "finished": "Fertig",
+    "none": "Keine",
+    "wrinklePrevent": "Faltenprävention",
+    "delayWash": "Waschverzögerung",
+    "weightSensing": "Gewichtserkennung",
+    "freezeProtection": "Frostschutz",
+    "rinse": "Spülen",
+    "spin": "Schleudern",
+    "idle": "Leerlauf",
+    "off": "Aus"
   }
 }

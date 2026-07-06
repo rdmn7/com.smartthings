@@ -21,5 +21,19 @@
     "spin": "Essorage",
     "idle": "Inactif",
     "off": "Éteint"
+  },
+  "samsung_dryer_current_job_state": {
+    "cooling": "Refroidissement",
+    "drying": "Séchage",
+    "finished": "Terminé",
+    "none": "Aucun",
+    "wrinklePrevent": "Prévention des rides",
+    "delayWash": "Lavage différé",
+    "weightSensing": "Détection de poids",
+    "freezeProtection": "Protection contre le gel",
+    "rinse": "Rinçage",
+    "spin": "Essorage",
+    "idle": "Inactif",
+    "off": "Éteint"
   }
 }

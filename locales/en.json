@@ -21,5 +21,19 @@
     "spin": "Spinning",
     "idle": "Idle",
     "off": "Off"
+  },
+  "samsung_dryer_current_job_state": {
+    "cooling": "Cooling",
+    "drying": "Drying",
+    "finished": "Finished",
+    "none": "None",
+    "wrinklePrevent": "Wrinkle prevention",
+    "rinse": "Rinsing",
+    "spin": "Spinning",
+    "idle": "Idle",
+    "off": "Off",
+    "delayWash": "Delay washing",
+    "weightSensing": "Weight sensing",
+    "freezeProtection": "Freeze protection"
   }
 }

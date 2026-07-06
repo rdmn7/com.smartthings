@@ -21,5 +21,19 @@
     "spin": "Centrifugering",
     "idle": "Inaktiv",
     "off": "Slukket"
+  },
+  "samsung_dryer_current_job_state": {
+    "cooling": "Afkøling",
+    "drying": "Tørring",
+    "finished": "Færdig",
+    "none": "Ingen",
+    "wrinklePrevent": "Krølfri",
+    "delayWash": "Forsinket vask",
+    "weightSensing": "Vægtregistrering",
+    "freezeProtection": "Frostbeskyttelse",
+    "rinse": "Skylning",
+    "spin": "Centrifugering",
+    "idle": "Inaktiv",
+    "off": "Slukket"
   }
 }

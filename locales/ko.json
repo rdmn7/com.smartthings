@@ -21,5 +21,19 @@
     "spin": "탈수",
     "idle": "대기",
     "off": "꺼짐"
+  },
+  "samsung_dryer_current_job_state": {
+    "cooling": "냉각",
+    "drying": "건조",
+    "finished": "완료",
+    "none": "없음",
+    "wrinklePrevent": "주름 방지",
+    "delayWash": "예약 세탁",
+    "weightSensing": "무게 감지",
+    "freezeProtection": "동결 방지",
+    "rinse": "헹굼",
+    "spin": "탈수",
+    "idle": "대기",
+    "off": "꺼짐"
   }
 }
