@@ -71,6 +71,26 @@ module.exports = class SmartThingsDeviceTV extends SmartThingsDevice {
         });
       },
     },
+    // Power (W)
+    {
+      homeyCapabilityId: 'measure_power',
+      smartThingsComponentId: 'main',
+      smartThingsCapabilityId: 'powerConsumptionReport',
+      smartThingsAttributeId: 'powerConsumption',
+      async onReport({ value }) {
+        return this.constructor.getPowerConsumptionValue(value, 'power');
+      },
+    },
+    // Energy (kWh) — powerConsumption.energy is in Wh
+    {
+      homeyCapabilityId: 'meter_power',
+      smartThingsComponentId: 'main',
+      smartThingsCapabilityId: 'powerConsumptionReport',
+      smartThingsAttributeId: 'powerConsumption',
+      async onReport({ value }) {
+        return this.constructor.getPowerConsumptionValue(value, 'energy', 1000);
+      },
+    },
   ];
 
   // We haven't found a TV that supports the `samsungTV` capability yet.

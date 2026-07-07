@@ -26,12 +26,25 @@ module.exports = class SmartThingsDeviceWasher extends SmartThingsDevice {
     {
       homeyCapabilityId: 'samsung_washer_start',
       async onSet() {
-        await this.executeCommand({
-          component: 'main',
-          capability: 'washerOperatingState',
-          command: 'setMachineState',
-          args: ['run'],
-        });
+        if (this.getCapabilityValue('samsung_washer_remote_control_enabled') === false) {
+          throw new Error(this.homey.__('errors.remote_control_disabled'));
+        }
+
+        try {
+          await this.executeCommand({
+            component: 'main',
+            capability: 'washerOperatingState',
+            command: 'setMachineState',
+            args: ['run'],
+          });
+        } catch (err) {
+          this.error(`setMachineState run failed (${err.message}), trying samsungce start...`);
+          await this.executeCommand({
+            component: 'main',
+            capability: 'samsungce.washerOperatingState',
+            command: 'start',
+          });
+        }
       },
     },
     {
