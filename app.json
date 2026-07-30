@@ -1311,6 +1311,54 @@
             "filter": "driver_id=washer&capabilities=alarm_samsung_washer_addwash_door_open"
           }
         ]
+      },
+      {
+        "id": "samsung_washer_remote_control_enabled_true",
+        "title": {
+          "en": "Remote Start enabled",
+          "nl": "Afstandsbediening ingeschakeld",
+          "de": "Fernstart aktiviert",
+          "fr": "Démarrage à distance activé",
+          "es": "Inicio remoto activado",
+          "it": "Avvio remoto abilitato",
+          "no": "Fjernstyring aktivert",
+          "sv": "Fjärrstyrning aktiverad",
+          "da": "Fjernstyring aktiveret",
+          "pl": "Zdalne uruchomienie włączone",
+          "ru": "Дистанционный запуск включён",
+          "ko": "원격 제어 활성화됨"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=washer&capabilities=samsung_washer_remote_control_enabled"
+          }
+        ]
+      },
+      {
+        "id": "samsung_washer_remote_control_enabled_false",
+        "title": {
+          "en": "Remote Start disabled",
+          "nl": "Afstandsbediening uitgeschakeld",
+          "de": "Fernstart deaktiviert",
+          "fr": "Démarrage à distance désactivé",
+          "es": "Inicio remoto desactivado",
+          "it": "Avvio remoto disabilitato",
+          "no": "Fjernstyring deaktivert",
+          "sv": "Fjärrstyrning inaktiverad",
+          "da": "Fjernstyring deaktiveret",
+          "pl": "Zdalne uruchomienie wyłączone",
+          "ru": "Дистанционный запуск выключен",
+          "ko": "원격 제어 비활성화됨"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=washer&capabilities=samsung_washer_remote_control_enabled"
+          }
+        ]
       }
     ],
     "actions": [
@@ -2440,6 +2488,297 @@
             "filter": "driver_id=tv"
           }
         ]
+      },
+      {
+        "id": "set_washer_state",
+        "title": {
+          "en": "Set washer state to...",
+          "nl": "Zet wasmachine status naar...",
+          "de": "Waschmaschine Status setzen auf...",
+          "fr": "Définir l'état du lave-linge sur...",
+          "es": "Establecer estado de la lavadora en...",
+          "it": "Imposta stato lavatrice su...",
+          "no": "Sett vaskemaskin status til...",
+          "sv": "Ange tvättmaskinens status till...",
+          "da": "Sæt vaskemaskine status til...",
+          "pl": "Ustaw stan pralki na...",
+          "ru": "Установить состояние стиральной машины...",
+          "ko": "세탁기 상태 설정..."
+        },
+        "titleFormatted": {
+          "en": "Set washer state to [[state]]",
+          "nl": "Zet wasmachine status naar [[state]]"
+        },
+        "hint": {
+          "en": "Samsung Smart Control (Remote Start) must be enabled on the washer before using this action."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=washer"
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "title": {
+              "en": "State",
+              "nl": "Status"
+            },
+            "placeholder": {
+              "en": "Choose state",
+              "nl": "Kies status"
+            },
+            "values": [
+              {
+                "id": "run",
+                "title": {
+                  "en": "Run",
+                  "nl": "Starten"
+                }
+              },
+              {
+                "id": "pause",
+                "title": {
+                  "en": "Pause",
+                  "nl": "Pauzeren"
+                }
+              },
+              {
+                "id": "stop",
+                "title": {
+                  "en": "Stop",
+                  "nl": "Stoppen"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_washer_cycle",
+        "title": {
+          "en": "Set washing program to...",
+          "nl": "Stel wasprogramma in op...",
+          "de": "Waschprogramm einstellen auf...",
+          "fr": "Définir le programme de lavage sur...",
+          "es": "Establecer programa de lavado en...",
+          "it": "Imposta programma di lavaggio su...",
+          "no": "Angi vaskeprogram til...",
+          "sv": "Ange tvättprogram till...",
+          "da": "Indstil vaskeprogram til...",
+          "pl": "Ustaw program prania na...",
+          "ru": "Установить программу стирки...",
+          "ko": "세탁 프로그램 설정..."
+        },
+        "titleFormatted": {
+          "en": "Set washing program to [[cycle]]",
+          "nl": "Stel wasprogramma in op [[cycle]]"
+        },
+        "hint": {
+          "en": "Samsung Smart Control (Remote Start) must be enabled and the washer door must be closed before starting."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=washer"
+          },
+          {
+            "name": "cycle",
+            "type": "dropdown",
+            "title": {
+              "en": "Program",
+              "nl": "Programma"
+            },
+            "placeholder": {
+              "en": "Choose program",
+              "nl": "Kies programma"
+            },
+            "values": [
+              {
+                "id": "1C",
+                "title": {
+                  "en": "Cotton Normal",
+                  "nl": "Katoen normaal"
+                }
+              },
+              {
+                "id": "1B",
+                "title": {
+                  "en": "Cotton Heavy",
+                  "nl": "Katoen intensief"
+                }
+              },
+              {
+                "id": "2B",
+                "title": {
+                  "en": "Baby Care",
+                  "nl": "Baby zorg"
+                }
+              },
+              {
+                "id": "1D",
+                "title": {
+                  "en": "Allergy Care",
+                  "nl": "Allergie"
+                }
+              },
+              {
+                "id": "A0",
+                "title": {
+                  "en": "Wool",
+                  "nl": "Wol"
+                }
+              },
+              {
+                "id": "B0",
+                "title": {
+                  "en": "Mixed",
+                  "nl": "Mix"
+                }
+              },
+              {
+                "id": "25",
+                "title": {
+                  "en": "Synthetic (Color)",
+                  "nl": "Synthetisch (kleur)"
+                }
+              },
+              {
+                "id": "22",
+                "title": {
+                  "en": "Synthetic",
+                  "nl": "Synthetisch"
+                }
+              },
+              {
+                "id": "96",
+                "title": {
+                  "en": "Quick 30°",
+                  "nl": "Snel 30°"
+                }
+              },
+              {
+                "id": "20",
+                "title": {
+                  "en": "Hygiene / Sanitary",
+                  "nl": "Hygiëne"
+                }
+              },
+              {
+                "id": "65",
+                "title": {
+                  "en": "Sports",
+                  "nl": "Sport"
+                }
+              },
+              {
+                "id": "0A",
+                "title": {
+                  "en": "Outdoor",
+                  "nl": "Outdoor"
+                }
+              },
+              {
+                "id": "5C",
+                "title": {
+                  "en": "Towels",
+                  "nl": "Handdoeken"
+                }
+              },
+              {
+                "id": "06",
+                "title": {
+                  "en": "Drum Clean",
+                  "nl": "Trommelreiniging"
+                }
+              },
+              {
+                "id": "26",
+                "title": {
+                  "en": "Denim",
+                  "nl": "Denim"
+                }
+              },
+              {
+                "id": "55",
+                "title": {
+                  "en": "Hand Wash",
+                  "nl": "Handwas"
+                }
+              },
+              {
+                "id": "1A",
+                "title": {
+                  "en": "Easy Care",
+                  "nl": "Easy care"
+                }
+              },
+              {
+                "id": "66",
+                "title": {
+                  "en": "Silk / Delicates",
+                  "nl": "Zijde / Fijn"
+                }
+              },
+              {
+                "id": "2D",
+                "title": {
+                  "en": "Bedding",
+                  "nl": "Beddengoed"
+                }
+              },
+              {
+                "id": "27",
+                "title": {
+                  "en": "Rinse + Spin",
+                  "nl": "Spoelen + centrifugeren"
+                }
+              },
+              {
+                "id": "28",
+                "title": {
+                  "en": "Spin Only",
+                  "nl": "Alleen centrifugeren"
+                }
+              },
+              {
+                "id": "F1",
+                "title": {
+                  "en": "My Cycle",
+                  "nl": "Mijn programma"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "samsung_washer_remote_control_is_enabled",
+        "title": {
+          "en": "Remote Start !{{is|is not}} enabled",
+          "nl": "Afstandsbediening !{{is|is niet}} ingeschakeld",
+          "de": "Fernstart !{{ist|ist nicht}} aktiviert",
+          "fr": "Démarrage à distance !{{est|n'est pas}} activé",
+          "es": "Inicio remoto !{{está|no está}} activado",
+          "it": "Avvio remoto !{{è|non è}} abilitato",
+          "no": "Fjernstyring !{{er|er ikke}} aktivert",
+          "sv": "Fjärrstyrning !{{är|är inte}} aktiverad",
+          "da": "Fjernstyring !{{er|er ikke}} aktiveret",
+          "pl": "Zdalne uruchomienie !{{jest|nie jest}} włączone",
+          "ru": "Дистанционный запуск !{{включён|выключен}}",
+          "ko": "원격 제어 !{{활성화됨|비활성화됨}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=washer&capabilities=samsung_washer_remote_control_enabled"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -3335,7 +3674,20 @@
         "ko": "삼성 세탁기"
       },
       "class": "washer",
-      "capabilities": [],
+      "capabilities": [
+        "samsung_washer_remote_control_enabled",
+        "onoff",
+        "samsung_washer_start",
+        "samsung_washer_current_job_state",
+        "samsung_washer_cycle",
+        "samsung_washer_progress_percentage",
+        "samsung_washer_progress_remaining_time",
+        "measure_power",
+        "meter_power",
+        "meter_water",
+        "samsung_washer_auto_detergent_status",
+        "samsung_washer_auto_softener_status"
+      ],
       "id": "washer"
     }
   ],
@@ -5194,6 +5546,188 @@
         }
       ]
     },
+    "samsung_washer_auto_detergent_status": {
+      "type": "enum",
+      "title": {
+        "en": "Detergent Level",
+        "nl": "Wasmiddelniveau",
+        "de": "Waschmittelstand",
+        "fr": "Niveau de détergent",
+        "es": "Nivel de detergente",
+        "it": "Livello detersivo",
+        "no": "Vaskemiddelnivå",
+        "sv": "Tvättmedelnivå",
+        "da": "Vaskemiddelniveau",
+        "pl": "Poziom detergentu",
+        "ru": "Уровень моющего средства",
+        "ko": "세제 수준"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/samsung_washer_auto_detergent_status.svg",
+      "values": [
+        {
+          "id": "normal",
+          "title": {
+            "en": "Normal",
+            "nl": "Normaal",
+            "de": "Normal",
+            "fr": "Normal",
+            "es": "Normal",
+            "it": "Normale",
+            "no": "Normal",
+            "sv": "Normal",
+            "da": "Normal",
+            "pl": "Normalny",
+            "ru": "Нормально",
+            "ko": "정상"
+          }
+        },
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "nl": "Laag",
+            "de": "Niedrig",
+            "fr": "Bas",
+            "es": "Bajo",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "da": "Lav",
+            "pl": "Niski",
+            "ru": "Мало",
+            "ko": "부족"
+          }
+        },
+        {
+          "id": "empty",
+          "title": {
+            "en": "Empty",
+            "nl": "Leeg",
+            "de": "Leer",
+            "fr": "Vide",
+            "es": "Vacío",
+            "it": "Vuoto",
+            "no": "Tom",
+            "sv": "Tom",
+            "da": "Tom",
+            "pl": "Pusty",
+            "ru": "Пусто",
+            "ko": "비어있음"
+          }
+        },
+        {
+          "id": "error",
+          "title": {
+            "en": "Error",
+            "nl": "Fout",
+            "de": "Fehler",
+            "fr": "Erreur",
+            "es": "Error",
+            "it": "Errore",
+            "no": "Feil",
+            "sv": "Fel",
+            "da": "Fejl",
+            "pl": "Błąd",
+            "ru": "Ошибка",
+            "ko": "오류"
+          }
+        }
+      ]
+    },
+    "samsung_washer_auto_softener_status": {
+      "type": "enum",
+      "title": {
+        "en": "Softener Level",
+        "nl": "Wasverzachterniveau",
+        "de": "Weichspülerstand",
+        "fr": "Niveau d'adoucissant",
+        "es": "Nivel de suavizante",
+        "it": "Livello ammorbidente",
+        "no": "Skyllemiddelnivå",
+        "sv": "Sköljmedelsnivå",
+        "da": "Skyllemiddelniveau",
+        "pl": "Poziom płynu zmiękczającego",
+        "ru": "Уровень кондиционера",
+        "ko": "섬유유연제 수준"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/samsung_washer_auto_softener_status.svg",
+      "values": [
+        {
+          "id": "normal",
+          "title": {
+            "en": "Normal",
+            "nl": "Normaal",
+            "de": "Normal",
+            "fr": "Normal",
+            "es": "Normal",
+            "it": "Normale",
+            "no": "Normal",
+            "sv": "Normal",
+            "da": "Normal",
+            "pl": "Normalny",
+            "ru": "Нормально",
+            "ko": "정상"
+          }
+        },
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "nl": "Laag",
+            "de": "Niedrig",
+            "fr": "Bas",
+            "es": "Bajo",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "da": "Lav",
+            "pl": "Niski",
+            "ru": "Мало",
+            "ko": "부족"
+          }
+        },
+        {
+          "id": "empty",
+          "title": {
+            "en": "Empty",
+            "nl": "Leeg",
+            "de": "Leer",
+            "fr": "Vide",
+            "es": "Vacío",
+            "it": "Vuoto",
+            "no": "Tom",
+            "sv": "Tom",
+            "da": "Tom",
+            "pl": "Pusty",
+            "ru": "Пусто",
+            "ko": "비어있음"
+          }
+        },
+        {
+          "id": "error",
+          "title": {
+            "en": "Error",
+            "nl": "Fout",
+            "de": "Fehler",
+            "fr": "Erreur",
+            "es": "Error",
+            "it": "Errore",
+            "no": "Feil",
+            "sv": "Fel",
+            "da": "Fejl",
+            "pl": "Błąd",
+            "ru": "Ошибка",
+            "ko": "오류"
+          }
+        }
+      ]
+    },
     "samsung_washer_current_job_state": {
       "type": "enum",
       "title": {
@@ -5506,6 +6040,204 @@
         }
       ]
     },
+    "samsung_washer_cycle": {
+      "type": "enum",
+      "title": {
+        "en": "Washing Program",
+        "nl": "Wasprogramma",
+        "de": "Waschprogramm",
+        "fr": "Programme de lavage",
+        "es": "Programa de lavado",
+        "it": "Programma di lavaggio",
+        "no": "Vaskeprogram",
+        "sv": "Tvättprogram",
+        "da": "Vaskeprogram",
+        "pl": "Program prania",
+        "ru": "Программа стирки",
+        "ko": "세탁 프로그램"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/samsung_washer_cycle.svg",
+      "values": [
+        {
+          "id": "1C",
+          "title": {
+            "en": "Cotton Normal",
+            "nl": "Katoen normaal"
+          }
+        },
+        {
+          "id": "1B",
+          "title": {
+            "en": "Cotton Heavy",
+            "nl": "Katoen intensief"
+          }
+        },
+        {
+          "id": "2B",
+          "title": {
+            "en": "Baby Care",
+            "nl": "Baby zorg"
+          }
+        },
+        {
+          "id": "1D",
+          "title": {
+            "en": "Allergy Care",
+            "nl": "Allergie"
+          }
+        },
+        {
+          "id": "A0",
+          "title": {
+            "en": "Wool",
+            "nl": "Wol"
+          }
+        },
+        {
+          "id": "B0",
+          "title": {
+            "en": "Mixed",
+            "nl": "Mix"
+          }
+        },
+        {
+          "id": "25",
+          "title": {
+            "en": "Synthetic (Color)",
+            "nl": "Synthetisch (kleur)"
+          }
+        },
+        {
+          "id": "22",
+          "title": {
+            "en": "Synthetic",
+            "nl": "Synthetisch"
+          }
+        },
+        {
+          "id": "96",
+          "title": {
+            "en": "Quick 30°",
+            "nl": "Snel 30°"
+          }
+        },
+        {
+          "id": "20",
+          "title": {
+            "en": "Hygiene / Sanitary",
+            "nl": "Hygiëne"
+          }
+        },
+        {
+          "id": "65",
+          "title": {
+            "en": "Sports",
+            "nl": "Sport"
+          }
+        },
+        {
+          "id": "0A",
+          "title": {
+            "en": "Outdoor",
+            "nl": "Outdoor"
+          }
+        },
+        {
+          "id": "5C",
+          "title": {
+            "en": "Towels",
+            "nl": "Handdoeken"
+          }
+        },
+        {
+          "id": "06",
+          "title": {
+            "en": "Drum Clean",
+            "nl": "Trommelreiniging"
+          }
+        },
+        {
+          "id": "26",
+          "title": {
+            "en": "Denim",
+            "nl": "Denim"
+          }
+        },
+        {
+          "id": "55",
+          "title": {
+            "en": "Hand Wash",
+            "nl": "Handwas"
+          }
+        },
+        {
+          "id": "0C",
+          "title": {
+            "en": "Cotton 90°",
+            "nl": "Katoen 90°"
+          }
+        },
+        {
+          "id": "1A",
+          "title": {
+            "en": "Easy Care",
+            "nl": "Easy care"
+          }
+        },
+        {
+          "id": "66",
+          "title": {
+            "en": "Silk / Delicates",
+            "nl": "Zijde / Fijn"
+          }
+        },
+        {
+          "id": "30",
+          "title": {
+            "en": "Pre-Soak & Wash",
+            "nl": "Voorwas + wassen"
+          }
+        },
+        {
+          "id": "2D",
+          "title": {
+            "en": "Bedding",
+            "nl": "Beddengoed"
+          }
+        },
+        {
+          "id": "27",
+          "title": {
+            "en": "Rinse + Spin",
+            "nl": "Spoelen + centrifugeren"
+          }
+        },
+        {
+          "id": "28",
+          "title": {
+            "en": "Spin Only",
+            "nl": "Alleen centrifugeren"
+          }
+        },
+        {
+          "id": "29",
+          "title": {
+            "en": "Self Clean+",
+            "nl": "Zelf reinigen+"
+          }
+        },
+        {
+          "id": "F1",
+          "title": {
+            "en": "My Cycle",
+            "nl": "Mijn programma"
+          }
+        }
+      ]
+    },
     "samsung_washer_progress_percentage": {
       "type": "number",
       "title": {
@@ -5561,6 +6293,48 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/samsung_washer_progress_remaining_time.svg"
+    },
+    "samsung_washer_remote_control_enabled": {
+      "type": "boolean",
+      "title": {
+        "en": "Remote Start",
+        "nl": "Afstandsbediening",
+        "de": "Fernstart",
+        "fr": "Démarrage à distance",
+        "es": "Inicio remoto",
+        "it": "Avvio remoto",
+        "no": "Fjernstyring",
+        "sv": "Fjärrstyrning",
+        "da": "Fjernstyring",
+        "pl": "Zdalne uruchomienie",
+        "ru": "Дистанционный запуск",
+        "ko": "원격 제어"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/samsung_washer_remote_control_enabled.svg",
+      "insights": true
+    },
+    "samsung_washer_start": {
+      "type": "boolean",
+      "title": {
+        "en": "Start Cycle",
+        "nl": "Start cyclus",
+        "de": "Zyklus starten",
+        "fr": "Démarrer le cycle",
+        "es": "Iniciar ciclo",
+        "it": "Avvia ciclo",
+        "no": "Start syklus",
+        "sv": "Starta cykel",
+        "da": "Start cyklus",
+        "pl": "Uruchom cykl",
+        "ru": "Запустить цикл",
+        "ko": "사이클 시작"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button"
     }
   }
 }
