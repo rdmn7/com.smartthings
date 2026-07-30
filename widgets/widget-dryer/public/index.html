@@ -4,17 +4,17 @@
 </head>
 <body class="homey-widget-full">
 <div id="app">
-  <div class="panel is-washer">
+  <div class="panel is-dryer">
     <div class="p-hdr">
       <span class="dev-name" id="name">—</span>
-      <span class="remote remote-w" id="remote" style="display:none">Remote</span>
+      <span class="remote remote-d" id="remote" style="display:none">Remote</span>
     </div>
 
     <div class="p-body">
       <div class="ring-wrap">
         <svg class="ring-svg" viewBox="0 0 48 48">
           <circle class="ring-bg" cx="24" cy="24" r="21"/>
-          <circle class="ring-main rp-w" id="prog" cx="24" cy="24" r="21"/>
+          <circle class="ring-main rp-d" id="prog" cx="24" cy="24" r="21"/>
         </svg>
         <span class="ring-pct" id="pct">—</span>
       </div>
@@ -34,30 +34,13 @@
         <span class="stat-val"><span id="en-v">—</span><span class="stat-unit">kWh</span></span>
         <span class="stat-lbl">Energy</span>
       </div>
-      <div class="stat stat-water" id="wt-wrap" style="display:none">
-        <span class="stat-val"><span id="wt-v">—</span><span class="stat-unit">L</span></span>
-        <span class="stat-lbl">Water</span>
-      </div>
-    </div>
-
-    <div class="p-cons" id="cons" style="display:none">
-      <span class="c-badge" id="det" style="display:none">
-        <span class="c-dot" id="det-dot"></span>
-        <span class="c-name">Det</span>
-        <span class="c-val" id="det-val">—</span>
-      </span>
-      <span class="c-badge" id="sof" style="display:none">
-        <span class="c-dot" id="sof-dot"></span>
-        <span class="c-name">Sof</span>
-        <span class="c-val" id="sof-val">—</span>
-      </span>
     </div>
   </div>
 </div>
 
 <script>
 function onHomeyReady(Homey) {
-  Homey.ready({ height: 240 });
+  Homey.ready({ height: 210 });
 
   const C_MAIN = 2 * Math.PI * 21;
   const deviceId = Homey.getDeviceIds()[0];
@@ -83,11 +66,6 @@ function onHomeyReady(Homey) {
     return w >= 1000 ? (w / 1000).toFixed(1) + 'k' : String(Math.round(w));
   }
 
-  function consStatus(val) {
-    const map = { normal: ['OK', 'c-ok'], low: ['Low', 'c-low'], empty: ['Empty', 'c-empty'], error: ['Err', 'c-empty'] };
-    return map[val] || [val || '—', 'c-ok'];
-  }
-
   function refresh() {
     if (!deviceId) return;
     Homey.api('GET', '/?deviceId=' + deviceId)
@@ -108,44 +86,18 @@ function onHomeyReady(Homey) {
         document.getElementById('pct').textContent = pct < 2 ? '—' : Math.round(pct) + '%';
 
         document.getElementById('stat').textContent =
-          Homey.__('samsung_washer_current_job_state.' + state) || state || '—';
+          Homey.__('samsung_dryer_current_job_state.' + state) || state || '—';
 
         const rem_time = isActive ? (info.remainingTime || '—') : '—';
         const timeEl = document.getElementById('time');
         timeEl.textContent = rem_time;
-        timeEl.classList.toggle('tv-w', isActive);
+        timeEl.classList.toggle('tv-d', isActive);
         document.getElementById('done').textContent = isActive ? finishTime(rem_time) : '—';
 
         document.getElementById('pw-v').textContent = fmtPower(info.power);
         document.getElementById('en-v').textContent = info.energy != null ? info.energy.toFixed(2) : '—';
-
-        const wtWrap = document.getElementById('wt-wrap');
-        if (info.water != null) {
-          wtWrap.style.display = 'flex';
-          document.getElementById('wt-v').textContent = Math.round(info.water);
-        } else {
-          wtWrap.style.display = 'none';
-        }
-
-        const consEl = document.getElementById('cons');
-        const hasDet = info.detergent != null;
-        const hasSof = info.softener != null;
-        consEl.style.display = (hasDet || hasSof) ? 'flex' : 'none';
-
-        [['det', info.detergent], ['sof', info.softener]].forEach(([key, val]) => {
-          const el = document.getElementById(key);
-          if (!el) return;
-          if (val != null) {
-            el.style.display = 'flex';
-            const [label, cls] = consStatus(val);
-            document.getElementById(key + '-dot').className = 'c-dot ' + cls;
-            document.getElementById(key + '-val').textContent = label;
-          } else {
-            el.style.display = 'none';
-          }
-        });
       })
-      .catch(err => console.error('Failed to refresh washer widget:', err));
+      .catch(err => console.error('Failed to refresh dryer widget:', err));
   }
 
   refresh();

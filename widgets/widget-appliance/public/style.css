@@ -14,11 +14,14 @@ body {
 
 #app {
   display: flex;
+  flex-direction: row;
   height: 100%;
   width: 100%;
   padding: var(--homey-su-3, 12px) var(--homey-su-4, 16px);
+  gap: 0;
 }
 
+/* ── Panels ── */
 .panel {
   flex: 1;
   display: flex;
@@ -26,9 +29,21 @@ body {
   justify-content: center;
   gap: var(--homey-su-3, 12px);
   min-width: 0;
-  max-width: 420px;
-  padding-left: var(--homey-su-3, 12px);
-  border-left: 3px solid var(--homey-color-blue, #2d9cdb);
+  max-width: 340px;
+  padding: 0 var(--homey-su-3, 12px);
+  border-left: 3px solid transparent;
+}
+.panel:first-of-type { padding-left: var(--homey-su-2, 8px); }
+.panel:last-of-type  { padding-right: var(--homey-su-2, 8px); }
+.panel.is-washer { border-left-color: var(--homey-color-blue, #2d9cdb); }
+.panel.is-dryer  { border-left-color: var(--homey-color-orange, #f2994a); }
+
+.vdiv {
+  width: 1px;
+  align-self: stretch;
+  margin: var(--homey-su-4, 16px) 0;
+  background: var(--homey-line-color-light, rgba(128,128,128,0.2));
+  flex-shrink: 0;
 }
 
 /* ── Header ── */
@@ -36,7 +51,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4px;
+  gap: var(--homey-su-1, 4px);
 }
 
 .dev-name {
@@ -58,14 +73,24 @@ body {
   border-radius: var(--homey-border-radius-small, 8px);
   white-space: nowrap;
   flex-shrink: 0;
+  display: none;
+}
+.remote-w {
   color: var(--homey-text-color-blue, #2d9cdb);
   background: rgba(45,156,219,0.14);
   background: color-mix(in srgb, var(--homey-color-blue, #2d9cdb) 14%, transparent);
   border: 1px solid rgba(45,156,219,0.3);
   border: 1px solid color-mix(in srgb, var(--homey-color-blue, #2d9cdb) 30%, transparent);
 }
+.remote-d {
+  color: var(--homey-text-color-orange, #f2994a);
+  background: rgba(242,153,74,0.14);
+  background: color-mix(in srgb, var(--homey-color-orange, #f2994a) 14%, transparent);
+  border: 1px solid rgba(242,153,74,0.3);
+  border: 1px solid color-mix(in srgb, var(--homey-color-orange, #f2994a) 30%, transparent);
+}
 
-/* ── Body ── */
+/* ── Body: main ring + info ── */
 .p-body {
   display: flex;
   align-items: center;
@@ -89,12 +114,12 @@ body {
 
 .ring-main {
   fill: none;
-  stroke: var(--homey-color-blue, #2d9cdb);
   stroke-width: 3.5;
   stroke-linecap: round;
-  transition: stroke-dashoffset 0.6s ease, opacity 0.3s ease;
-  filter: drop-shadow(0 0 4px rgba(45,156,219,0.5));
+  transition: stroke-dashoffset 0.6s ease, filter 0.3s ease, opacity 0.3s ease;
 }
+.rp-w { stroke: var(--homey-color-blue, #2d9cdb); filter: drop-shadow(0 0 4px rgba(45,156,219,0.5)); }
+.rp-d { stroke: var(--homey-color-orange, #f2994a); filter: drop-shadow(0 0 4px rgba(242,153,74,0.5)); }
 .ring-main.is-idle { opacity: 0.25; filter: none; }
 
 .ring-pct {
@@ -107,7 +132,7 @@ body {
   pointer-events: none;
 }
 
-/* ── Info ── */
+/* ── Status info ── */
 .p-info {
   flex: 1;
   display: flex;
@@ -147,8 +172,9 @@ body {
   color: var(--homey-text-color-light, rgba(128,128,128,0.6));
 }
 .tval.tv-w { color: var(--homey-text-color-blue, #2d9cdb); }
+.tval.tv-d { color: var(--homey-text-color-orange, #f2994a); }
 
-/* ── Stat chips ── */
+/* ── Stat chips (power / energy / water) ── */
 .p-stats {
   display: flex;
   gap: var(--homey-su-2, 8px);
@@ -225,4 +251,16 @@ body {
   font-size: 9px;
   font-weight: var(--homey-font-weight-medium, 600);
   color: var(--homey-text-color, rgba(255,255,255,0.85));
+}
+
+/* ── Empty state ── */
+.empty-state {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--homey-text-color-light, rgba(128,128,128,0.6));
+  font-size: 12px;
+  text-align: center;
+  padding: 20px;
 }

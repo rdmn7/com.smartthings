@@ -2757,32 +2757,6 @@
     ],
     "conditions": [
       {
-        "id": "samsung_washer_remote_control_is_enabled",
-        "title": {
-          "en": "Remote Start !{{is|is not}} enabled",
-          "nl": "Afstandsbediening !{{is|is niet}} ingeschakeld",
-          "de": "Fernstart !{{ist|ist nicht}} aktiviert",
-          "fr": "Démarrage à distance !{{est|n'est pas}} activé",
-          "es": "Inicio remoto !{{está|no está}} activado",
-          "it": "Avvio remoto !{{è|non è}} abilitato",
-          "no": "Fjernstyring !{{er|er ikke}} aktivert",
-          "sv": "Fjärrstyrning !{{är|är inte}} aktiverad",
-          "da": "Fjernstyring !{{er|er ikke}} aktiveret",
-          "pl": "Zdalne uruchomienie !{{jest|nie jest}} włączone",
-          "ru": "Дистанционный запуск !{{включён|выключен}}",
-          "ko": "원격 제어 !{{활성화됨|비활성화됨}}"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=washer&capabilities=samsung_washer_remote_control_enabled"
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
         "id": "samsung_dryer_remote_control_is_enabled",
         "title": {
           "en": "Remote Start !{{is|is not}} enabled",
@@ -2803,6 +2777,30 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=dryer&capabilities=samsung_dryer_remote_control_enabled"
+          }
+        ]
+      },
+      {
+        "id": "samsung_washer_remote_control_is_enabled",
+        "title": {
+          "en": "Remote Start !{{is|is not}} enabled",
+          "nl": "Afstandsbediening !{{is|is niet}} ingeschakeld",
+          "de": "Fernstart !{{ist|ist nicht}} aktiviert",
+          "fr": "Démarrage à distance !{{est|n'est pas}} activé",
+          "es": "Inicio remoto !{{está|no está}} activado",
+          "it": "Avvio remoto !{{è|non è}} abilitato",
+          "no": "Fjernstyring !{{er|er ikke}} aktivert",
+          "sv": "Fjärrstyrning !{{är|är inte}} aktiverad",
+          "da": "Fjernstyring !{{er|er ikke}} aktiveret",
+          "pl": "Zdalne uruchomienie !{{jest|nie jest}} włączone",
+          "ru": "Дистанционный запуск !{{включён|выключен}}",
+          "ko": "원격 제어 !{{활성화됨|비활성화됨}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=washer&capabilities=samsung_washer_remote_control_enabled"
           }
         ]
       }
@@ -3692,11 +3690,86 @@
     }
   ],
   "widgets": {
+    "widget-appliance": {
+      "name": {
+        "en": "Washer & Dryer",
+        "nl": "Wasmachine & Droger",
+        "de": "Waschmaschine & Trockner",
+        "fr": "Lave-linge & Sèche-linge",
+        "es": "Lavadora & Secadora",
+        "it": "Lavatrice & Asciugatrice",
+        "no": "Vaskemaskin & Tørketrommel",
+        "sv": "Tvättmaskin & Torktumlare",
+        "da": "Vaskemaskine & Tørretumbler",
+        "pl": "Pralka & Suszarka",
+        "ru": "Стиральная & Сушильная машина",
+        "ko": "세탁기 & 건조기"
+      },
+      "height": 240,
+      "settings": [],
+      "devices": {
+        "type": "app",
+        "singular": false,
+        "filter": {
+          "capabilities": "samsung_washer_current_job_state|samsung_dryer_current_job_state"
+        }
+      },
+      "api": {
+        "getDeviceState": {
+          "method": "GET",
+          "path": "/"
+        }
+      },
+      "id": "widget-appliance"
+    },
+    "widget-dryer": {
+      "name": {
+        "en": "Dryer",
+        "nl": "Droger",
+        "de": "Trockner",
+        "fr": "Sèche-linge",
+        "es": "Secadora",
+        "it": "Asciugatrice",
+        "no": "Tørketrommel",
+        "sv": "Torktumlare",
+        "da": "Tørretumbler",
+        "pl": "Suszarka",
+        "ru": "Сушилка",
+        "ko": "건조기"
+      },
+      "height": 210,
+      "settings": [],
+      "devices": {
+        "type": "app",
+        "singular": true,
+        "filter": {
+          "capabilities": "samsung_dryer_current_job_state"
+        }
+      },
+      "api": {
+        "getDryerState": {
+          "method": "GET",
+          "path": "/"
+        }
+      },
+      "id": "widget-dryer"
+    },
     "widget-washer": {
       "name": {
-        "en": "Washer"
+        "en": "Washer",
+        "nl": "Wasmachine",
+        "de": "Waschmaschine",
+        "fr": "Lave-linge",
+        "es": "Lavadora",
+        "it": "Lavatrice",
+        "no": "Vaskemaskin",
+        "sv": "Tvättmaskin",
+        "da": "Vaskemaskine",
+        "pl": "Pralka",
+        "ru": "Стиральная машина",
+        "ko": "세탁기"
       },
-      "height": 140,
+      "height": 240,
       "settings": [],
       "devices": {
         "type": "app",
