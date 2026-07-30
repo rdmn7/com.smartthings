@@ -18,72 +18,72 @@
       }
     },
     {
-        "id": "samsung_washer_job_started",
-        "title": {
-          "en": "A washing job has started",
-          "nl": "Een wasbeurt is gestart",
-          "da": "En vaskeopgave er startet",
-          "de": "Ein Waschgang hat begonnen",
-          "es": "Un trabajo de lavado ha comenzado",
-          "fr": "Un cycle de lavage a commencé",
-          "it": "Un lavaggio è iniziato",
-          "no": "En vask har startet",
-          "sv": "En tvätt har startat",
-          "pl": "Rozpoczęto pranie",
-          "ru": "Стирка начата",
-          "ko": "세탁 작업이 시작되었습니다"
-        }
+      "id": "samsung_washer_job_started",
+      "title": {
+        "en": "A washing job has started",
+        "nl": "Een wasbeurt is gestart",
+        "da": "En vaskeopgave er startet",
+        "de": "Ein Waschgang hat begonnen",
+        "es": "Un trabajo de lavado ha comenzado",
+        "fr": "Un cycle de lavage a commencé",
+        "it": "Un lavaggio è iniziato",
+        "no": "En vask har startet",
+        "sv": "En tvätt har startat",
+        "pl": "Rozpoczęto pranie",
+        "ru": "Стирка начата",
+        "ko": "세탁 작업이 시작되었습니다"
+      }
     },
     {
-        "id": "samsung_washer_job_weight_sensing",
-        "title": {
-          "en": "Weight sensing",
-          "nl": "Gewichtsdetectie",
-          "da": "Vægtregistrering",
-          "de": "Gewichtserkennung",
-          "es": "Detección de peso",
-          "fr": "Détection de poids",
-          "it": "Rilevamento del peso",
-          "no": "Vektdeteksjon",
-          "sv": "Viktdetektering",
-          "pl": "Wykrywanie wagi",
-          "ru": "Определение веса",
-          "ko": "중량 감지"
-        }
+      "id": "samsung_washer_job_weight_sensing",
+      "title": {
+        "en": "Weight sensing",
+        "nl": "Gewichtsdetectie",
+        "da": "Vægtregistrering",
+        "de": "Gewichtserkennung",
+        "es": "Detección de peso",
+        "fr": "Détection de poids",
+        "it": "Rilevamento del peso",
+        "no": "Vektdeteksjon",
+        "sv": "Viktdetektering",
+        "pl": "Wykrywanie wagi",
+        "ru": "Определение веса",
+        "ko": "중량 감지"
+      }
     },
     {
-        "id": "samsung_washer_job_pre_wash",
-        "title": {
-          "en": "PreWash",
-          "nl": "Voorwas",
-          "da": "Forvask",
-          "de": "Vorwäsche",
-          "es": "Prelavado",
-          "fr": "Prélavage",
-          "it": "Prelavaggio",
-          "no": "Forvask",
-          "sv": "Förtvätt",
-          "pl": "Pranie wstępne",
-          "ru": "Предварительная стирка",
-          "ko": "사전 세탁"
-        }
+      "id": "samsung_washer_job_pre_wash",
+      "title": {
+        "en": "PreWash",
+        "nl": "Voorwas",
+        "da": "Forvask",
+        "de": "Vorwäsche",
+        "es": "Prelavado",
+        "fr": "Prélavage",
+        "it": "Prelavaggio",
+        "no": "Forvask",
+        "sv": "Förtvätt",
+        "pl": "Pranie wstępne",
+        "ru": "Предварительная стирка",
+        "ko": "사전 세탁"
+      }
     },
     {
-        "id": "samsung_washer_job_rinse",
-        "title": {
-            "en": "Started rinsing",
-            "nl": "Begonnen met spoelen",
-            "da": "Begyndte at skylle",
-            "de": "Hat mit dem Spülen begonnen",
-            "es": "Comenzó a enjuagar",
-            "fr": "A commencé à rincer",
-            "it": "Ha iniziato a sciacquare",
-            "no": "Startet skylling",
-            "sv": "Började skölja",
-            "pl": "Rozpoczęto płukanie",
-            "ru": "Начался процесс полоскания",
-            "ko": "헹굼 시작됨"
-        }
+      "id": "samsung_washer_job_rinse",
+      "title": {
+        "en": "Started rinsing",
+        "nl": "Begonnen met spoelen",
+        "da": "Begyndte at skylle",
+        "de": "Hat mit dem Spülen begonnen",
+        "es": "Comenzó a enjuagar",
+        "fr": "A commencé à rincer",
+        "it": "Ha iniziato a sciacquare",
+        "no": "Startet skylling",
+        "sv": "Började skölja",
+        "pl": "Rozpoczęto płukanie",
+        "ru": "Начался процесс полоскания",
+        "ko": "헹굼 시작됨"
+      }
     },
     {
       "id": "alarm_samsung_washer_addwash_door_open_true",
@@ -124,6 +124,163 @@
       "$filter": {
         "capabilities": "alarm_samsung_washer_addwash_door_open"
       }
+    },
+    {
+      "id": "samsung_washer_remote_control_enabled_true",
+      "title": {
+        "en": "Remote Start enabled",
+        "nl": "Afstandsbediening ingeschakeld",
+        "de": "Fernstart aktiviert",
+        "fr": "Démarrage à distance activé",
+        "es": "Inicio remoto activado",
+        "it": "Avvio remoto abilitato",
+        "no": "Fjernstyring aktivert",
+        "sv": "Fjärrstyrning aktiverad",
+        "da": "Fjernstyring aktiveret",
+        "pl": "Zdalne uruchomienie włączone",
+        "ru": "Дистанционный запуск включён",
+        "ko": "원격 제어 활성화됨"
+      },
+      "$filter": {
+        "capabilities": "samsung_washer_remote_control_enabled"
+      }
+    },
+    {
+      "id": "samsung_washer_remote_control_enabled_false",
+      "title": {
+        "en": "Remote Start disabled",
+        "nl": "Afstandsbediening uitgeschakeld",
+        "de": "Fernstart deaktiviert",
+        "fr": "Démarrage à distance désactivé",
+        "es": "Inicio remoto desactivado",
+        "it": "Avvio remoto disabilitato",
+        "no": "Fjernstyring deaktivert",
+        "sv": "Fjärrstyrning inaktiverad",
+        "da": "Fjernstyring deaktiveret",
+        "pl": "Zdalne uruchomienie wyłączone",
+        "ru": "Дистанционный запуск выключен",
+        "ko": "원격 제어 비활성화됨"
+      },
+      "$filter": {
+        "capabilities": "samsung_washer_remote_control_enabled"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "samsung_washer_remote_control_is_enabled",
+      "title": {
+        "en": "Remote Start !{{is|is not}} enabled",
+        "nl": "Afstandsbediening !{{is|is niet}} ingeschakeld",
+        "de": "Fernstart !{{ist|ist nicht}} aktiviert",
+        "fr": "Démarrage à distance !{{est|n'est pas}} activé",
+        "es": "Inicio remoto !{{está|no está}} activado",
+        "it": "Avvio remoto !{{è|non è}} abilitato",
+        "no": "Fjernstyring !{{er|er ikke}} aktivert",
+        "sv": "Fjärrstyrning !{{är|är inte}} aktiverad",
+        "da": "Fjernstyring !{{er|er ikke}} aktiveret",
+        "pl": "Zdalne uruchomienie !{{jest|nie jest}} włączone",
+        "ru": "Дистанционный запуск !{{включён|выключен}}",
+        "ko": "원격 제어 !{{활성화됨|비활성화됨}}"
+      },
+      "$filter": {
+        "capabilities": "samsung_washer_remote_control_enabled"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "set_washer_state",
+      "title": {
+        "en": "Set washer state to...",
+        "nl": "Zet wasmachine status naar...",
+        "de": "Waschmaschine Status setzen auf...",
+        "fr": "Définir l'état du lave-linge sur...",
+        "es": "Establecer estado de la lavadora en...",
+        "it": "Imposta stato lavatrice su...",
+        "no": "Sett vaskemaskin status til...",
+        "sv": "Ange tvättmaskinens status till...",
+        "da": "Sæt vaskemaskine status til...",
+        "pl": "Ustaw stan pralki na...",
+        "ru": "Установить состояние стиральной машины...",
+        "ko": "세탁기 상태 설정..."
+      },
+      "titleFormatted": {
+        "en": "Set washer state to [[state]]",
+        "nl": "Zet wasmachine status naar [[state]]"
+      },
+      "hint": {
+        "en": "Samsung Smart Control (Remote Start) must be enabled on the washer before using this action."
+      },
+      "args": [
+        {
+          "name": "state",
+          "type": "dropdown",
+          "title": { "en": "State", "nl": "Status" },
+          "placeholder": { "en": "Choose state", "nl": "Kies status" },
+          "values": [
+            { "id": "run", "title": { "en": "Run", "nl": "Starten" } },
+            { "id": "pause", "title": { "en": "Pause", "nl": "Pauzeren" } },
+            { "id": "stop", "title": { "en": "Stop", "nl": "Stoppen" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set_washer_cycle",
+      "title": {
+        "en": "Set washing program to...",
+        "nl": "Stel wasprogramma in op...",
+        "de": "Waschprogramm einstellen auf...",
+        "fr": "Définir le programme de lavage sur...",
+        "es": "Establecer programa de lavado en...",
+        "it": "Imposta programma di lavaggio su...",
+        "no": "Angi vaskeprogram til...",
+        "sv": "Ange tvättprogram till...",
+        "da": "Indstil vaskeprogram til...",
+        "pl": "Ustaw program prania na...",
+        "ru": "Установить программу стирки...",
+        "ko": "세탁 프로그램 설정..."
+      },
+      "titleFormatted": {
+        "en": "Set washing program to [[cycle]]",
+        "nl": "Stel wasprogramma in op [[cycle]]"
+      },
+      "hint": {
+        "en": "Samsung Smart Control (Remote Start) must be enabled and the washer door must be closed before starting."
+      },
+      "args": [
+        {
+          "name": "cycle",
+          "type": "dropdown",
+          "title": { "en": "Program", "nl": "Programma" },
+          "placeholder": { "en": "Choose program", "nl": "Kies programma" },
+          "values": [
+            { "id": "1C", "title": { "en": "Cotton Normal", "nl": "Katoen normaal" } },
+            { "id": "1B", "title": { "en": "Cotton Heavy", "nl": "Katoen intensief" } },
+            { "id": "2B", "title": { "en": "Baby Care", "nl": "Baby zorg" } },
+            { "id": "1D", "title": { "en": "Allergy Care", "nl": "Allergie" } },
+            { "id": "A0", "title": { "en": "Wool", "nl": "Wol" } },
+            { "id": "B0", "title": { "en": "Mixed", "nl": "Mix" } },
+            { "id": "25", "title": { "en": "Synthetic (Color)", "nl": "Synthetisch (kleur)" } },
+            { "id": "22", "title": { "en": "Synthetic", "nl": "Synthetisch" } },
+            { "id": "96", "title": { "en": "Quick 30°", "nl": "Snel 30°" } },
+            { "id": "20", "title": { "en": "Hygiene / Sanitary", "nl": "Hygiëne" } },
+            { "id": "65", "title": { "en": "Sports", "nl": "Sport" } },
+            { "id": "0A", "title": { "en": "Outdoor", "nl": "Outdoor" } },
+            { "id": "5C", "title": { "en": "Towels", "nl": "Handdoeken" } },
+            { "id": "06", "title": { "en": "Drum Clean", "nl": "Trommelreiniging" } },
+            { "id": "26", "title": { "en": "Denim", "nl": "Denim" } },
+            { "id": "55", "title": { "en": "Hand Wash", "nl": "Handwas" } },
+            { "id": "1A", "title": { "en": "Easy Care", "nl": "Easy care" } },
+            { "id": "66", "title": { "en": "Silk / Delicates", "nl": "Zijde / Fijn" } },
+            { "id": "2D", "title": { "en": "Bedding", "nl": "Beddengoed" } },
+            { "id": "27", "title": { "en": "Rinse + Spin", "nl": "Spoelen + centrifugeren" } },
+            { "id": "28", "title": { "en": "Spin Only", "nl": "Alleen centrifugeren" } },
+            { "id": "F1", "title": { "en": "My Cycle", "nl": "Mijn programma" } }
+          ]
+        }
+      ]
     }
   ]
 }
