@@ -1,8 +1,19 @@
 {
   "name": {
-    "en": "Washer"
+    "en": "Washer",
+    "nl": "Wasmachine",
+    "de": "Waschmaschine",
+    "fr": "Lave-linge",
+    "es": "Lavadora",
+    "it": "Lavatrice",
+    "no": "Vaskemaskin",
+    "sv": "Tvättmaskin",
+    "da": "Vaskemaskine",
+    "pl": "Pralka",
+    "ru": "Стиральная машина",
+    "ko": "세탁기"
   },
-  "height": 140,
+  "height": 240,
   "settings": [],
   "devices": {
     "type": "app",
