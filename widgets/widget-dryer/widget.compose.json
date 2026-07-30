@@ -1,0 +1,31 @@
+{
+  "name": {
+    "en": "Dryer",
+    "nl": "Droger",
+    "de": "Trockner",
+    "fr": "Sèche-linge",
+    "es": "Secadora",
+    "it": "Asciugatrice",
+    "no": "Tørketrommel",
+    "sv": "Torktumlare",
+    "da": "Tørretumbler",
+    "pl": "Suszarka",
+    "ru": "Сушилка",
+    "ko": "건조기"
+  },
+  "height": 210,
+  "settings": [],
+  "devices": {
+    "type": "app",
+    "singular": true,
+    "filter": {
+      "capabilities": "samsung_dryer_current_job_state"
+    }
+  },
+  "api": {
+    "getDryerState": {
+      "method": "GET",
+      "path": "/"
+    }
+  }
+}
